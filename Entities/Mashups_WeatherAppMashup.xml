@@ -1,0 +1,799 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Entities build="b535" majorVersion="8" minorVersion="3" modelPersistenceProviderPackage="H2PersistenceProviderPackage" revision="2" schemaVersion="1030" universal=""><Mashups><Mashup aspect.isResponsive="false" aspect.mashupType="mashup" columns="0.0" description="" documentationContent="" homeMashup="" lastModifiedDate="2018-12-14T15:13:55.112Z" name="WeatherAppMashup" projectName="" rows="0.0" tags="Applications:ExtensionExample"><Owner name="Administrator" type="User"/><avatar/><DesignTimePermissions><Create/><Read/><Update/><Delete/><Metadata/></DesignTimePermissions><RunTimePermissions/><VisibilityPermissions><Visibility/></VisibilityPermissions><ConfigurationTableDefinitions/><ConfigurationTables/><ParameterDefinitions/><Things><Thing>WeatherThing</Thing></Things><ThingShapes/><ThingTemplates/><mashupContent><![CDATA[{
+  "Data" : {
+    "Session" : {
+      "DataName" : "Session",
+      "EntityName" : "",
+      "EntityType" : "Session",
+      "Id" : "session",
+      "Services" : [ {
+        "APIMethod" : "post",
+        "Characteristic" : "Services",
+        "Id" : "SessionInterface",
+        "Name" : "GetGlobalSessionValues",
+        "Parameters" : { },
+        "RefreshInterval" : 0,
+        "Target" : "GetGlobalSessionValues"
+      } ]
+    },
+    "Things_WeatherThing" : {
+      "DataName" : "Things_WeatherThing",
+      "EntityName" : "WeatherThing",
+      "EntityType" : "Things",
+      "Id" : "f9901bc0-a1e4-4d41-ac3a-537d6c68a240",
+      "Services" : [ {
+        "APIMethod" : "post",
+        "Characteristic" : "Services",
+        "Id" : "04d8a7d9-909d-465b-88b6-793197ad333c",
+        "Name" : "UpdateWeatherInfo",
+        "Parameters" : { },
+        "RefreshInterval" : 0,
+        "Target" : "UpdateWeatherInfo"
+      }, {
+        "APIMethod" : "get",
+        "Characteristic" : "Services",
+        "Id" : "6b2f5cfe-6360-400b-ac93-bfc0c08cc024",
+        "Name" : "GetProperties",
+        "Parameters" : {
+          "useWebsockets" : false
+        },
+        "RefreshInterval" : 0,
+        "Target" : "GetProperties"
+      } ]
+    },
+    "UserExtensions" : {
+      "DataName" : "UserExtensions",
+      "EntityName" : "",
+      "EntityType" : "UserExtensions",
+      "Id" : "UserExtensions",
+      "Services" : [ {
+        "APIMethod" : "post",
+        "Characteristic" : "Services",
+        "Id" : "UserExtensionInterface",
+        "Name" : "GetCurrentUserExtensionProperties",
+        "Parameters" : { },
+        "RefreshInterval" : 0,
+        "Target" : "GetCurrentUserExtensionProperties"
+      } ]
+    }
+  },
+  "DataBindings" : [ {
+    "Id" : "12041530-7e69-4afd-bc8e-3fe670355cb4",
+    "PropertyMaps" : [ {
+      "SourceProperty" : "Output",
+      "SourcePropertyBaseType" : "BOOLEAN",
+      "SourcePropertyType" : "Property",
+      "TargetProperty" : "Visible",
+      "TargetPropertyBaseType" : "BOOLEAN",
+      "TargetPropertyType" : "property"
+    } ],
+    "SourceArea" : "UI",
+    "SourceId" : "validator-6",
+    "SourceSection" : "",
+    "TargetArea" : "UI",
+    "TargetId" : "image-17",
+    "TargetSection" : ""
+  }, {
+    "Id" : "870c8521-1a05-4489-b926-dec2267b18aa",
+    "PropertyMaps" : [ {
+      "SourceProperty" : "Output",
+      "SourcePropertyBaseType" : "BOOLEAN",
+      "SourcePropertyType" : "Property",
+      "TargetProperty" : "Visible",
+      "TargetPropertyBaseType" : "BOOLEAN",
+      "TargetPropertyType" : "property"
+    } ],
+    "SourceArea" : "UI",
+    "SourceId" : "validator-12",
+    "SourceSection" : "",
+    "TargetArea" : "UI",
+    "TargetId" : "image-16",
+    "TargetSection" : ""
+  }, {
+    "Id" : "0283debd-6346-42ae-8e15-a1909ff0926c",
+    "PropertyMaps" : [ {
+      "SourceProperty" : "Output",
+      "SourcePropertyBaseType" : "BOOLEAN",
+      "SourcePropertyType" : "Property",
+      "TargetProperty" : "Visible",
+      "TargetPropertyBaseType" : "BOOLEAN",
+      "TargetPropertyType" : "property"
+    } ],
+    "SourceArea" : "UI",
+    "SourceId" : "validator-13",
+    "SourceSection" : "",
+    "TargetArea" : "UI",
+    "TargetId" : "image-2",
+    "TargetSection" : ""
+  }, {
+    "Id" : "f118aacf-8c40-4231-9a43-c3a8a3d23ba9",
+    "PropertyMaps" : [ {
+      "SourceProperty" : "Output",
+      "SourcePropertyBaseType" : "BOOLEAN",
+      "SourcePropertyType" : "Property",
+      "TargetProperty" : "Visible",
+      "TargetPropertyBaseType" : "BOOLEAN",
+      "TargetPropertyType" : "property"
+    } ],
+    "SourceArea" : "UI",
+    "SourceId" : "validator-14",
+    "SourceSection" : "",
+    "TargetArea" : "UI",
+    "TargetId" : "image-15",
+    "TargetSection" : ""
+  }, {
+    "Id" : "68f75b7b-6fe9-4c70-a232-8d4f2e47446a",
+    "PropertyMaps" : [ {
+      "SourceProperty" : "Output",
+      "SourcePropertyBaseType" : "BOOLEAN",
+      "SourcePropertyType" : "Property",
+      "TargetProperty" : "Visible",
+      "TargetPropertyBaseType" : "BOOLEAN",
+      "TargetPropertyType" : "property"
+    } ],
+    "SourceArea" : "UI",
+    "SourceId" : "validator-23",
+    "SourceSection" : "",
+    "TargetArea" : "UI",
+    "TargetId" : "image-22",
+    "TargetSection" : ""
+  }, {
+    "Id" : "7471ed2d-0af8-40d9-9ec8-526b5af8e231",
+    "PropertyMaps" : [ {
+      "SourceProperty" : "Output",
+      "SourcePropertyBaseType" : "BOOLEAN",
+      "SourcePropertyType" : "Property",
+      "TargetProperty" : "Visible",
+      "TargetPropertyBaseType" : "BOOLEAN",
+      "TargetPropertyType" : "property"
+    } ],
+    "SourceArea" : "UI",
+    "SourceId" : "validator-25",
+    "SourceSection" : "",
+    "TargetArea" : "UI",
+    "TargetId" : "image-24",
+    "TargetSection" : ""
+  }, {
+    "Id" : "b8289a69-0820-4904-bd87-6a637b0325a8",
+    "PropertyMaps" : [ {
+      "SourceProperty" : "Text",
+      "SourcePropertyBaseType" : "STRING",
+      "TargetProperty" : "City",
+      "TargetPropertyBaseType" : "STRING",
+      "TargetPropertyType" : "Parameter"
+    } ],
+    "SourceArea" : "UI",
+    "SourceId" : "textbox-4",
+    "SourceSection" : "",
+    "TargetArea" : "Data",
+    "TargetId" : "UpdateWeatherInfo",
+    "TargetSection" : "Things_WeatherThing"
+  }, {
+    "Id" : "280a0c5d-680b-4aa1-a13a-c3a49a88dcf7",
+    "PropertyMaps" : [ {
+      "SourceProperty" : "WeatherDescription",
+      "SourcePropertyBaseType" : "STRING",
+      "SourcePropertyType" : "Property",
+      "TargetProperty" : "weather",
+      "TargetPropertyBaseType" : "STRING",
+      "TargetPropertyType" : "property"
+    } ],
+    "SourceArea" : "Data",
+    "SourceDetails" : "AllData",
+    "SourceId" : "GetProperties",
+    "SourceSection" : "Things_WeatherThing",
+    "TargetArea" : "UI",
+    "TargetId" : "validator-25",
+    "TargetSection" : ""
+  }, {
+    "Id" : "ec67f18f-10cc-4f70-9a2d-2ad939eac93f",
+    "PropertyMaps" : [ {
+      "SourceProperty" : "WeatherDescription",
+      "SourcePropertyBaseType" : "STRING",
+      "SourcePropertyType" : "Property",
+      "TargetProperty" : "weather",
+      "TargetPropertyBaseType" : "STRING",
+      "TargetPropertyType" : "property"
+    } ],
+    "SourceArea" : "Data",
+    "SourceDetails" : "AllData",
+    "SourceId" : "GetProperties",
+    "SourceSection" : "Things_WeatherThing",
+    "TargetArea" : "UI",
+    "TargetId" : "validator-23",
+    "TargetSection" : ""
+  }, {
+    "Id" : "c768f21c-6dac-474b-9fee-5ef8083862b3",
+    "PropertyMaps" : [ {
+      "SourceProperty" : "WeatherDescription",
+      "SourcePropertyBaseType" : "STRING",
+      "SourcePropertyType" : "Property",
+      "TargetProperty" : "weather",
+      "TargetPropertyBaseType" : "STRING",
+      "TargetPropertyType" : "property"
+    } ],
+    "SourceArea" : "Data",
+    "SourceDetails" : "AllData",
+    "SourceId" : "GetProperties",
+    "SourceSection" : "Things_WeatherThing",
+    "TargetArea" : "UI",
+    "TargetId" : "validator-6",
+    "TargetSection" : ""
+  }, {
+    "Id" : "1ff3a9e6-f0e1-4cc7-8021-b52218053678",
+    "PropertyMaps" : [ {
+      "SourceProperty" : "WeatherDescription",
+      "SourcePropertyBaseType" : "STRING",
+      "SourcePropertyType" : "Property",
+      "TargetProperty" : "weather",
+      "TargetPropertyBaseType" : "STRING",
+      "TargetPropertyType" : "property"
+    } ],
+    "SourceArea" : "Data",
+    "SourceDetails" : "AllData",
+    "SourceId" : "GetProperties",
+    "SourceSection" : "Things_WeatherThing",
+    "TargetArea" : "UI",
+    "TargetId" : "validator-12",
+    "TargetSection" : ""
+  }, {
+    "Id" : "d1791585-ae38-412e-9a1e-64f9af2e0662",
+    "PropertyMaps" : [ {
+      "SourceProperty" : "WeatherDescription",
+      "SourcePropertyBaseType" : "STRING",
+      "SourcePropertyType" : "Property",
+      "TargetProperty" : "weather",
+      "TargetPropertyBaseType" : "STRING",
+      "TargetPropertyType" : "property"
+    } ],
+    "SourceArea" : "Data",
+    "SourceDetails" : "AllData",
+    "SourceId" : "GetProperties",
+    "SourceSection" : "Things_WeatherThing",
+    "TargetArea" : "UI",
+    "TargetId" : "validator-13",
+    "TargetSection" : ""
+  }, {
+    "Id" : "7098a8ed-f6b7-4bf5-ab1e-d33a6b7b01a0",
+    "PropertyMaps" : [ {
+      "SourceProperty" : "WeatherDescription",
+      "SourcePropertyBaseType" : "STRING",
+      "SourcePropertyType" : "Property",
+      "TargetProperty" : "weather",
+      "TargetPropertyBaseType" : "STRING",
+      "TargetPropertyType" : "property"
+    } ],
+    "SourceArea" : "Data",
+    "SourceDetails" : "AllData",
+    "SourceId" : "GetProperties",
+    "SourceSection" : "Things_WeatherThing",
+    "TargetArea" : "UI",
+    "TargetId" : "validator-14",
+    "TargetSection" : ""
+  }, {
+    "Id" : "05bf7508-96e4-4860-9799-4b86c61e133c",
+    "PropertyMaps" : [ {
+      "SourceProperty" : "Temperature",
+      "SourcePropertyBaseType" : "NUMBER",
+      "SourcePropertyType" : "Property",
+      "TargetProperty" : "Data",
+      "TargetPropertyBaseType" : "NUMBER",
+      "TargetPropertyType" : "property"
+    } ],
+    "SourceArea" : "Data",
+    "SourceDetails" : "AllData",
+    "SourceId" : "GetProperties",
+    "SourceSection" : "Things_WeatherThing",
+    "TargetArea" : "UI",
+    "TargetId" : "leddisplay-3",
+    "TargetSection" : ""
+  }, {
+    "Id" : "0dd54e94-9d92-4f98-aa5d-30bb41671a90",
+    "PropertyMaps" : [ {
+      "SourceProperty" : "WeatherDescription",
+      "SourcePropertyBaseType" : "STRING",
+      "SourcePropertyType" : "Property",
+      "TargetProperty" : "Text",
+      "TargetPropertyBaseType" : "STRING",
+      "TargetPropertyType" : "property"
+    } ],
+    "SourceArea" : "Data",
+    "SourceDetails" : "AllData",
+    "SourceId" : "GetProperties",
+    "SourceSection" : "Things_WeatherThing",
+    "TargetArea" : "UI",
+    "TargetId" : "label-18",
+    "TargetSection" : ""
+  } ],
+  "DesignTimePermissions" : {
+    "Create" : [ ],
+    "Delete" : [ ],
+    "Metadata" : [ ],
+    "Read" : [ ],
+    "Update" : [ ]
+  },
+  "Events" : [ {
+    "EventHandlerArea" : "Data",
+    "EventHandlerId" : "Things_WeatherThing",
+    "EventHandlerService" : "GetProperties",
+    "EventTriggerArea" : "Data",
+    "EventTriggerEvent" : "ServiceInvokeCompleted",
+    "EventTriggerId" : "UpdateWeatherInfo",
+    "EventTriggerSection" : "Things_WeatherThing",
+    "Id" : "f7d5df1f-ca48-49d2-8ce8-7e05c3155d61"
+  }, {
+    "EventHandlerArea" : "Data",
+    "EventHandlerId" : "Things_WeatherThing",
+    "EventHandlerService" : "UpdateWeatherInfo",
+    "EventTriggerArea" : "UI",
+    "EventTriggerEvent" : "Clicked",
+    "EventTriggerId" : "button-8",
+    "EventTriggerSection" : "",
+    "Id" : "736b4078-9900-492c-ad6a-1a26b936d62c"
+  } ],
+  "RunTimePermissions" : {
+    "permissions" : [ ]
+  },
+  "UI" : {
+    "Properties" : {
+      "AddToDashboardButtonStyle" : "DefaultAddToDashboardButtonStyle",
+      "Area" : "Mashup",
+      "BGImageRepeat" : "no-repeat",
+      "BGImageSize" : "auto",
+      "Columns" : 0,
+      "ConfigureGadgetButtonStyle" : "DefaultConfigureGadgetButtonStyle",
+      "DisplayName" : "Mashup",
+      "EnableParameterEditing" : false,
+      "Height" : 618,
+      "Id" : "mashup-root",
+      "IgnoreWarningsInViewMashup" : false,
+      "IsPrintLayout" : false,
+      "Left" : 0,
+      "MashupToEditGadget" : "DefaultMashupToEditGadget",
+      "MinHeight" : 0,
+      "MinWidth" : 0,
+      "ResponsiveLayout" : false,
+      "Rows" : 0,
+      "ShowDataLoading" : true,
+      "Style" : "DefaultSquealBtnStyle",
+      "Title" : "",
+      "TitleBar" : false,
+      "TitleBarStyle" : "DefaultTitleBarStyle",
+      "TitleBarText" : "Gadget Title Here",
+      "Top" : 0,
+      "Type" : "mashup",
+      "Visible" : true,
+      "Width" : 1024,
+      "Z-index" : 10,
+      "__TypeDisplayName" : "mashup",
+      "id_index" : 25,
+      "supportsAutoResize" : true
+    },
+    "Widgets" : [ {
+      "Properties" : {
+        "AlternateText" : "",
+        "Area" : "UI",
+        "BorderStyle" : "DefaultImageBorderStyle",
+        "DisplayName" : "cloud",
+        "Height" : 215,
+        "Id" : "image-2",
+        "Left" : 380,
+        "PreventCaching" : true,
+        "ResponsiveLayout" : false,
+        "Scaling" : "width",
+        "ShowDataLoading" : true,
+        "SourceURL" : "cloud",
+        "ToolTipField" : "",
+        "ToolTipStyle" : "DefaultTooltipStyle",
+        "Top" : 115,
+        "Type" : "image",
+        "Visible" : false,
+        "Width" : 215,
+        "Z-index" : 10,
+        "__TypeDisplayName" : "image",
+        "__supportsTooltip" : true
+      },
+      "Widgets" : [ ]
+    }, {
+      "Properties" : {
+        "Area" : "UI",
+        "Decimals" : 2,
+        "Digits" : 5,
+        "DisplayName" : "Temperature",
+        "Height" : 108,
+        "Id" : "leddisplay-3",
+        "LEDFormatter_StateParameters" : [ ],
+        "LEDLabelStyle" : "DefaultWidgetLabelStyle",
+        "LEDSize" : "xlarge",
+        "LEDStyle" : "DefaultLEDStyle",
+        "Label" : "",
+        "LabelAlignment" : "left",
+        "Left" : 340,
+        "ResponsiveLayout" : false,
+        "ShowDataLoading" : true,
+        "ToolTipField" : "",
+        "ToolTipStyle" : "DefaultTooltipStyle",
+        "Top" : 400,
+        "Type" : "leddisplay",
+        "Visible" : true,
+        "Width" : 304,
+        "Z-index" : 10,
+        "ZeroFill" : false,
+        "__TypeDisplayName" : "leddisplay",
+        "__supportsLabel" : true,
+        "__supportsTooltip" : true
+      },
+      "Widgets" : [ ]
+    }, {
+      "Properties" : {
+        "Area" : "UI",
+        "CursorPosition" : 0,
+        "DefaultTextboxFocusStyle" : "DefaultFocusStyle",
+        "DisplayName" : "textbox-4",
+        "Height" : 24,
+        "Id" : "textbox-4",
+        "InnerShadow" : true,
+        "Label" : "",
+        "LabelAlignment" : "left",
+        "Left" : 375,
+        "MaskInputCharacters" : false,
+        "PlaceholderText" : "Enter city name",
+        "ReadOnly" : false,
+        "ResponsiveLayout" : false,
+        "ShowDataLoading" : true,
+        "Style" : "DefaultTextBoxStyle",
+        "TabSequence" : 0,
+        "Text" : "",
+        "TextAlign" : "left",
+        "TextboxLabelStyle" : "DefaultWidgetLabelStyle",
+        "ToolTipField" : "",
+        "ToolTipStyle" : "DefaultTooltipStyle",
+        "Top" : 55,
+        "Type" : "textbox",
+        "Visible" : true,
+        "Width" : 200,
+        "Z-index" : 10,
+        "__TypeDisplayName" : "textbox",
+        "__supportsLabel" : true,
+        "__supportsTooltip" : true
+      },
+      "Widgets" : [ ]
+    }, {
+      "Properties" : {
+        "Area" : "UI",
+        "AutoEvaluate" : true,
+        "DisplayName" : "Rain-validator",
+        "Expression" : "Output=weather.includes(\"rain\")",
+        "Height" : 28,
+        "Id" : "validator-6",
+        "Left" : 155,
+        "Output" : true,
+        "ResponsiveLayout" : false,
+        "ShowDataLoading" : true,
+        "Top" : 160,
+        "Type" : "validator",
+        "Visible" : true,
+        "Width" : 200,
+        "Z-index" : 10,
+        "__TypeDisplayName" : "validator",
+        "_currentParameterDefs" : [ {
+          "BaseType" : "STRING",
+          "Description" : "",
+          "ParameterName" : "weather"
+        } ]
+      },
+      "Widgets" : [ ]
+    }, {
+      "Properties" : {
+        "ActiveStyle" : "DefaultButtonActiveStyle",
+        "Area" : "UI",
+        "CancelConfirmationButton" : "button2",
+        "ConfirmationButton1Label" : "Yes",
+        "ConfirmationButton2Label" : "No",
+        "ConfirmationPrompt" : "Do Action?",
+        "ConfirmationRequired" : false,
+        "ConfirmationTitle" : "Confirm Action",
+        "ContextId" : "",
+        "DefaultConfirmationButton" : "button1",
+        "Disabled" : false,
+        "DisabledStyle" : "DefaultButtonDisabledStyle",
+        "DisplayName" : "button-8",
+        "FocusStyle" : "DefaultButtonFocusStyle",
+        "Height" : 30,
+        "HoverStyle" : "DefaultButtonHoverStyle",
+        "IconAlignment" : "left",
+        "Id" : "button-8",
+        "Label" : "Go",
+        "Left" : 585,
+        "ResponsiveLayout" : false,
+        "RoundedCorners" : true,
+        "ShowDataLoading" : true,
+        "Style" : "DefaultButtonStyle",
+        "TabSequence" : 0,
+        "ToolTipField" : "",
+        "ToolTipStyle" : "DefaultTooltipStyle",
+        "Top" : 50,
+        "Type" : "button",
+        "Visible" : true,
+        "Width" : 75,
+        "Z-index" : 10,
+        "__TypeDisplayName" : "button",
+        "__supportsTooltip" : true
+      },
+      "Widgets" : [ ]
+    }, {
+      "Properties" : {
+        "Area" : "UI",
+        "AutoEvaluate" : true,
+        "DisplayName" : "storm validator",
+        "Expression" : "Output=weather.includes(\"storm\");",
+        "Height" : 28,
+        "Id" : "validator-12",
+        "Left" : 160,
+        "Output" : true,
+        "ResponsiveLayout" : false,
+        "ShowDataLoading" : true,
+        "Top" : 210,
+        "Type" : "validator",
+        "Visible" : true,
+        "Width" : 200,
+        "Z-index" : 10,
+        "__TypeDisplayName" : "validator",
+        "_currentParameterDefs" : [ {
+          "BaseType" : "STRING",
+          "Description" : "",
+          "ParameterName" : "weather"
+        } ]
+      },
+      "Widgets" : [ ]
+    }, {
+      "Properties" : {
+        "Area" : "UI",
+        "AutoEvaluate" : true,
+        "DisplayName" : "cloud-validator",
+        "Expression" : "Output=weather.includes(\"cloud\")",
+        "Height" : 28,
+        "Id" : "validator-13",
+        "Left" : 155,
+        "Output" : true,
+        "ResponsiveLayout" : false,
+        "ShowDataLoading" : true,
+        "Top" : 255,
+        "Type" : "validator",
+        "Visible" : true,
+        "Width" : 200,
+        "Z-index" : 10,
+        "__TypeDisplayName" : "validator",
+        "_currentParameterDefs" : [ {
+          "BaseType" : "STRING",
+          "Description" : "",
+          "ParameterName" : "weather"
+        } ]
+      },
+      "Widgets" : [ ]
+    }, {
+      "Properties" : {
+        "Area" : "UI",
+        "AutoEvaluate" : true,
+        "DisplayName" : "clear-validator",
+        "Expression" : "Output=weather.includes(\"clear\");",
+        "Height" : 28,
+        "Id" : "validator-14",
+        "Left" : 150,
+        "Output" : true,
+        "ResponsiveLayout" : false,
+        "ShowDataLoading" : true,
+        "Top" : 295,
+        "Type" : "validator",
+        "Visible" : true,
+        "Width" : 200,
+        "Z-index" : 10,
+        "__TypeDisplayName" : "validator",
+        "_currentParameterDefs" : [ {
+          "BaseType" : "STRING",
+          "Description" : "",
+          "ParameterName" : "weather"
+        } ]
+      },
+      "Widgets" : [ ]
+    }, {
+      "Properties" : {
+        "AlternateText" : "",
+        "Area" : "UI",
+        "BorderStyle" : "DefaultImageBorderStyle",
+        "DisplayName" : "clear",
+        "Height" : 215,
+        "Id" : "image-15",
+        "Left" : 380,
+        "PreventCaching" : true,
+        "ResponsiveLayout" : false,
+        "Scaling" : "width",
+        "ShowDataLoading" : true,
+        "SourceURL" : "clear",
+        "ToolTipField" : "",
+        "ToolTipStyle" : "DefaultTooltipStyle",
+        "Top" : 115,
+        "Type" : "image",
+        "Visible" : false,
+        "Width" : 215,
+        "Z-index" : 10,
+        "__TypeDisplayName" : "image",
+        "__supportsTooltip" : true
+      },
+      "Widgets" : [ ]
+    }, {
+      "Properties" : {
+        "AlternateText" : "",
+        "Area" : "UI",
+        "BorderStyle" : "DefaultImageBorderStyle",
+        "DisplayName" : "storm",
+        "Height" : 215,
+        "Id" : "image-16",
+        "Left" : 380,
+        "PreventCaching" : true,
+        "ResponsiveLayout" : false,
+        "Scaling" : "width",
+        "ShowDataLoading" : true,
+        "SourceURL" : "storm",
+        "ToolTipField" : "",
+        "ToolTipStyle" : "DefaultTooltipStyle",
+        "Top" : 115,
+        "Type" : "image",
+        "Visible" : false,
+        "Width" : 215,
+        "Z-index" : 10,
+        "__TypeDisplayName" : "image",
+        "__supportsTooltip" : true
+      },
+      "Widgets" : [ ]
+    }, {
+      "Properties" : {
+        "AlternateText" : "",
+        "Area" : "UI",
+        "BorderStyle" : "DefaultImageBorderStyle",
+        "DisplayName" : "rain",
+        "Height" : 215,
+        "Id" : "image-17",
+        "Left" : 375,
+        "PreventCaching" : false,
+        "ResponsiveLayout" : false,
+        "Scaling" : "width",
+        "ShowDataLoading" : true,
+        "SourceURL" : "rain",
+        "ToolTipField" : "",
+        "ToolTipStyle" : "DefaultTooltipStyle",
+        "Top" : 110,
+        "Type" : "image",
+        "Visible" : false,
+        "Width" : 215,
+        "Z-index" : 10,
+        "__TypeDisplayName" : "image",
+        "__supportsTooltip" : true
+      },
+      "Widgets" : [ ]
+    }, {
+      "Properties" : {
+        "Alignment" : "left",
+        "AllowEllipsis" : false,
+        "Area" : "UI",
+        "DisplayName" : "label-18",
+        "Height" : 32,
+        "Id" : "label-18",
+        "Left" : 440,
+        "ResponsiveLayout" : false,
+        "ShowDataLoading" : true,
+        "Style" : "DefaultLabelStyle",
+        "ToolTipField" : "",
+        "ToolTipStyle" : "DefaultTooltipStyle",
+        "Top" : 350,
+        "Type" : "label",
+        "Visible" : true,
+        "Width" : 150,
+        "Z-index" : 10,
+        "__TypeDisplayName" : "label",
+        "__supportsTooltip" : true
+      },
+      "Widgets" : [ ]
+    }, {
+      "Properties" : {
+        "AlternateText" : "",
+        "Area" : "UI",
+        "BorderStyle" : "DefaultImageBorderStyle",
+        "DisplayName" : "snow",
+        "Height" : 215,
+        "Id" : "image-22",
+        "Left" : 375,
+        "PreventCaching" : false,
+        "ResponsiveLayout" : false,
+        "Scaling" : "width",
+        "ShowDataLoading" : true,
+        "SourceURL" : "snow",
+        "ToolTipField" : "",
+        "ToolTipStyle" : "DefaultTooltipStyle",
+        "Top" : 90,
+        "Type" : "image",
+        "Visible" : false,
+        "Width" : 215,
+        "Z-index" : 10,
+        "__TypeDisplayName" : "image",
+        "__supportsTooltip" : true
+      },
+      "Widgets" : [ ]
+    }, {
+      "Properties" : {
+        "Area" : "UI",
+        "AutoEvaluate" : true,
+        "DisplayName" : "snow validator",
+        "Expression" : "Output=weather.includes(\"snow\")",
+        "Height" : 28,
+        "Id" : "validator-23",
+        "Left" : 160,
+        "Output" : true,
+        "ResponsiveLayout" : false,
+        "ShowDataLoading" : true,
+        "Top" : 90,
+        "Type" : "validator",
+        "Visible" : true,
+        "Width" : 200,
+        "Z-index" : 10,
+        "__TypeDisplayName" : "validator",
+        "_currentParameterDefs" : [ {
+          "BaseType" : "STRING",
+          "Description" : "",
+          "ParameterName" : "weather"
+        } ]
+      },
+      "Widgets" : [ ]
+    }, {
+      "Properties" : {
+        "AlternateText" : "",
+        "Area" : "UI",
+        "BorderStyle" : "DefaultImageBorderStyle",
+        "DisplayName" : "mist",
+        "Height" : 215,
+        "Id" : "image-24",
+        "Left" : 375,
+        "PreventCaching" : false,
+        "ResponsiveLayout" : false,
+        "Scaling" : "width",
+        "ShowDataLoading" : true,
+        "SourceURL" : "mist",
+        "ToolTipField" : "",
+        "ToolTipStyle" : "DefaultTooltipStyle",
+        "Top" : 90,
+        "Type" : "image",
+        "Visible" : false,
+        "Width" : 215,
+        "Z-index" : 10,
+        "__TypeDisplayName" : "image",
+        "__supportsTooltip" : true
+      },
+      "Widgets" : [ ]
+    }, {
+      "Properties" : {
+        "Area" : "UI",
+        "AutoEvaluate" : true,
+        "DisplayName" : "mist validator",
+        "Expression" : "Output=weather.includes(\"mist\")",
+        "Height" : 28,
+        "Id" : "validator-25",
+        "Left" : 185,
+        "Output" : true,
+        "ResponsiveLayout" : false,
+        "ShowDataLoading" : true,
+        "Top" : 45,
+        "Type" : "validator",
+        "Visible" : true,
+        "Width" : 200,
+        "Z-index" : 10,
+        "__TypeDisplayName" : "validator",
+        "_currentParameterDefs" : [ {
+          "BaseType" : "STRING",
+          "Description" : "",
+          "ParameterName" : "weather"
+        } ]
+      },
+      "Widgets" : [ ]
+    } ]
+  },
+  "mashupType" : "mashup"
+}]]></mashupContent><ConfigurationChanges><ConfigurationChange changeAction="CREATE" changeReason="header : name : updated, projectName : updated&#10;" timestamp="2016-09-08T18:09:14.808Z" user="Administrator"/><ConfigurationChange changeAction="MODIFY" changeReason="header : projectName : updated&#10;" timestamp="2016-09-09T14:18:01.917Z" user="Administrator"/><ConfigurationChange changeAction="MODIFY" changeReason="" timestamp="2016-09-09T16:04:41.399Z" user="Administrator"/><ConfigurationChange changeAction="MODIFY" changeReason="" timestamp="2016-09-09T16:05:07.252Z" user="Administrator"/><ConfigurationChange changeAction="CREATE" changeReason="" timestamp="2018-07-03T04:39:08.988Z" user="Administrator"/><ConfigurationChange changeAction="MODIFY" changeReason="header : tags : updated&#10;Mashup : design : updated&#10;" timestamp="2018-07-03T04:42:00.754Z" user="Administrator"/><ConfigurationChange changeAction="CREATE" changeReason="" timestamp="2018-12-14T15:13:55.112Z" user="Administrator"/></ConfigurationChanges></Mashup></Mashups></Entities>

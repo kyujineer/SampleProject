@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Entities>
+    <ExtensionPackages>
+        <ExtensionPackage
+         dependsOn=""
+         description=""
+         haCompatible="false"
+         minimumThingWorxVersion="9.1.0"
+         name="SampleProject"
+         packageVersion="1.0.0"
+         vendor="kyujin jung">
+            <JarResources>
+                <FileResource
+                 description=""
+                 file="sampleproject.jar"
+                 type="JAR"></FileResource>
+                <FileResource
+                 description="json simple"
+                 file="json-simple-1.1.1.jar"
+                 type="JAR"></FileResource>
+                <FileResource
+                 description=""
+                 file="httpcore-4.4.10.jar"
+                 type="JAR"></FileResource>
+                <FileResource
+                 description=""
+                 file="httpclient-4.5.6.jar"
+                 type="JAR"></FileResource>
+                <FileResource
+                 description=""
+                 file="commons-logging-1.2.jar"
+                 type="JAR"></FileResource>
+            </JarResources>
+        </ExtensionPackage>
+    </ExtensionPackages>
+    <ThingPackages>
+        <ThingPackage
+         className="com.thingworx.weather.WeatherThingTemplate"
+         description=""
+         name="WeatherThingTemplatePackage"></ThingPackage>
+    </ThingPackages>
+    <ThingTemplates>
+        <ThingTemplate
+         aspect.isEditableExtensionObject="false"
+         description=""
+         name="WeatherThingTemplate"
+         thingPackage="WeatherThingTemplatePackage"></ThingTemplate>
+    </ThingTemplates>
+</Entities>
